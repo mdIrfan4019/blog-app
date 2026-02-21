@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useState } from "react";
@@ -11,16 +10,10 @@ const Navbar = () => {
     <nav className="bg-white border-b shadow-sm">
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
-<Link to="/" className="flex items-center gap-2">
-  <img
-    src="/favicon1.png"
-    alt="BlogApp Logo"
-    className="w-8 h-8"
-  />
-  <span className="text-xl font-bold text-indigo-600">
-    BlogApp
-  </span>
-</Link>
+        <Link to="/" className="flex items-center gap-2">
+          <img src="/favicon1.png" alt="BlogApp Logo" className="w-10 h-10" />
+          <span className="text-xl font-bold text-indigo-600">BlogApp</span>
+        </Link>
 
         {/* Desktop Menu (ONLY md and above) */}
         <div className="hidden md:flex items-center gap-6">
