@@ -11,7 +11,7 @@ const Home = () => {
     const fetchBlogs = async () => {
       try {
         const res = await api.get("/blogs");
-        setBlogs(res.data);
+        setBlogs(res.data); // ✅ direct array
       } catch (err) {
         setError("Failed to load blogs");
       } finally {
@@ -27,15 +27,14 @@ const Home = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-8">
-  <h2 className="text-2xl font-semibold mb-6">All Blogs</h2>
+      <h2 className="text-2xl font-semibold mb-6">All Blogs</h2>
 
-  <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-    {blogs.map((blog) => (
-      <BlogCard key={blog._id} blog={blog} />
-    ))}
-  </div>
-</div>
-
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {blogs.map((blog) => (
+          <BlogCard key={blog._id} blog={blog} />
+        ))}
+      </div>
+    </div>
   );
 };
 
